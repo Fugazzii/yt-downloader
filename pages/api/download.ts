@@ -33,5 +33,7 @@ export default async function handler(
     res.status(200).json({ data: url });      
   } catch (error) {
     res.status(500).json({ data: `Error is:  + ${error}`});
+  } finally {
+    res.end();
   }
 }
