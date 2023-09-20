@@ -2,26 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  box-sizing: border-box;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(75, 0, 130, 0.8);
+  border-radius: 3%;
+  scale: 0.5;
+  padding: 3rem;
+}
+
+main h1 {
+  color: white;
+  font-weight: bold;
+  scale: 2;
+  font-size: 2vw;
+  top: -7rem;
+}
+
+.form {
+  width: 50%;
+  height: 7vh; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  scale: 2;
+}
+
+.inp {
+  width: 75%;
+  height: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  outline: none;
+  border: 2px solid gray;
+}
+
+.inp:focus {
+  border: 2px solid black;
+}
+
+.button {
+  width: 20%;
+  height: 100%;
+  background-color: rgb(68, 68, 207);
+  outline: none;
+  border: none;
+  border-radius: 0.1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+.button:hover {
+  background-color: rgb(68, 68, 207, 0.9);
+}
+
+.msg {
+  font-weight: bold;
+  font-size: 3vw;
+  font-style: italic;
+  bottom: -5rem;
+}
+
+.loading {
+  color: lightskyblue;
+}
+
+.loaded {
+  color: lightgreen;
+}
+
+.error {
+  color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .inp {
+    width: 100%;
+  }
+  .button {
+    width: 100%;
+    height: 20vh;
+  }
 }
