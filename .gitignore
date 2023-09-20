@@ -12,6 +12,8 @@
 /.next/
 /out/
 
+pages/hooks/
+
 # production
 /build
 
